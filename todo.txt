@@ -1,0 +1,9 @@
++ options page (keybindings, show line numbers, word wrap, highlight current line, color scheme, use soft tab, tab size, etc.)
++ ask whether to leave page
+- resize
+- ajax save on ctrl+s
+- fullscreen mode
+- search and replace with regular expressions
+
+
+- dodac l18n
