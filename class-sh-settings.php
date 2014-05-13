@@ -400,6 +400,9 @@ class SH_Settings {
 	    	<option value="vim" <?php selected( 'vim' == $this->options['key_bindings'] ); ?> >Vim</option>
 	      	<option value="emacs" <?php selected( 'emacs' == $this->options['key_bindings'] ); ?> >Emacs</option>
     	</select>
+        <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">
+            <?php echo __('List of default keyboard shortcuts')?>
+        </a>
         <?php
     }
 

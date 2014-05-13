@@ -67,4 +67,20 @@ jQuery(function ($) {
 		});
 	}
 
+
+	var dom = ace.require("ace/lib/dom");
+	//var commands = ace.require("ace/commands/default_commands").commands;
+	editor.commands.addCommand({
+	// add command for all new editors
+	//commands.push({
+		name: "Toggle Fullscreen",
+		bindKey: {win: "Ctrl-Enter", mac: "Command-Enter"},
+		exec: function(editor) {
+			console.log('Ctrl-Enter');
+			dom.toggleCssClass(document.body, "fullScreen");
+			dom.toggleCssClass(editor.container, "fullScreen-editor");
+			editor.resize();
+		}
+	});
+
 });
