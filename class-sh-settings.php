@@ -70,6 +70,9 @@ class SH_Settings {
 		$this->option_group 		= 'sh_option_group';
 		$this->option_name 			= 'sh_option_name';
 		$this->setting_section_id 	= 'sh_settings_section';
+
+        // Plugin text domain
+        $this->td                   = 'syntax-highlight';
 	}
 
 	/**
@@ -108,7 +111,7 @@ class SH_Settings {
 		}
 
 		$url = add_query_arg( array( 'page' => $this->sh_settings_id ), admin_url( $this->settings_page ) );
-		$link = '<a href="' . $url . '">' . esc_html__( 'Settings' ) . '</a>';
+		$link = '<a href="' . $url . '">' . __( 'Settings' ) . '</a>';
 
 		return array_merge( $links, array(
 			'settings' => $link
@@ -124,8 +127,8 @@ class SH_Settings {
 	 */
 	public function admin_menu() {
 		add_options_page( 
-			'Syntax Highlight Options', 
-			'Syntax Highlight', 
+            __( 'Syntax Highlight Options', $this->td ),
+			__( 'Syntax Highlight', $this->td ), 
 			$this->capability, 
 			$this->sh_settings_id, 
 			array( $this, 'options_page') 
@@ -148,7 +151,7 @@ class SH_Settings {
         $this->options = wp_parse_args( get_option( $this->option_name ), $this->defaults );
         ?>
         <div class="wrap">
-            <h2><?php echo __('Settings') ?></h2>           
+            <h2><?php _e('Settings', $this->td) ?></h2>           
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
@@ -180,14 +183,14 @@ class SH_Settings {
 
         add_settings_section(
             $this->setting_section_id, // ID
-            'SyntaxHighlight Settings', // Title
+            __( 'SyntaxHighlight Settings', $this->td ), // Title
             array( $this, 'print_section_info' ), // Callback
             $this->sh_settings_id // Page
         );  
 
         add_settings_field(
             'tab_size', // ID
-            'Default tab size', // Title 
+            __( 'Default tab size', $this->td ), // Title 
             array( $this, 'tab_size_callback' ), // Callback
             $this->sh_settings_id, // Page
             $this->setting_section_id // Section           
@@ -195,7 +198,7 @@ class SH_Settings {
 
   		add_settings_field(
             'use_soft_tabs', // ID
-            'Use soft tabs?', // Title 
+            __( 'Use soft tabs?', $this->td ), // Title 
             array( $this, 'use_soft_tabs_callback' ), // Callback
             $this->sh_settings_id, // Page
             $this->setting_section_id // Section           
@@ -203,7 +206,7 @@ class SH_Settings {
 
         add_settings_field(
             'show_line_numbers', 
-            'Show line numbers?', 
+            __( 'Show line numbers?', $this->td ),
             array( $this, 'show_line_numbers_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -211,7 +214,7 @@ class SH_Settings {
 
         add_settings_field(
             'word_wrap', 
-            'Wrap words?', 
+            __( 'Wrap words?', $this->td ),
             array( $this, 'word_wrap_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -219,7 +222,7 @@ class SH_Settings {
 
         add_settings_field(
             'highlight_curr_line', 
-            __('Highlight current line?', 'syntaxhigh'), 
+            __( 'Highlight current line?', $this->td ), 
             array( $this, 'highlight_curr_line_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -227,7 +230,7 @@ class SH_Settings {
 
         add_settings_field(
             'key_bindings', 
-            __('Key bindings', 'syntaxhigh'), 
+            __( 'Key bindings', $this->td ), 
             array( $this, 'key_bindings_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -235,7 +238,7 @@ class SH_Settings {
 
          add_settings_field(
             'theme', 
-            'Theme', 
+            __('Theme', $this->td ),
             array( $this, 'theme_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -243,7 +246,7 @@ class SH_Settings {
 
         add_settings_field(
             'full_line_selection', 
-            'Full line selection', 
+            __('Full line selection', $this->td ),
             array( $this, 'full_line_selection_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -251,7 +254,7 @@ class SH_Settings {
 
         add_settings_field(
             'unsaved_changes', 
-            __('Show alert on leave when unsaved changes', 'syntaxhigh'), 
+            __('Show alert on leave when unsaved changes', $this->td ),
             array( $this, 'unsaved_changes_callback' ), 
             $this->sh_settings_id, 
             $this->setting_section_id
@@ -293,7 +296,7 @@ class SH_Settings {
      * Print the Section text
      */
     public function print_section_info() {
-        print 'Enter your settings below:';
+        print __( 'Enter your settings below:', $this->td );
     }
 
     /** 
@@ -401,7 +404,7 @@ class SH_Settings {
 	      	<option value="emacs" <?php selected( 'emacs' == $this->options['key_bindings'] ); ?> >Emacs</option>
     	</select>
         <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">
-            <?php echo __('List of default keyboard shortcuts')?>
+            <?php echo __( 'List of default keyboard shortcuts', $this->td )?>
         </a>
         <?php
     }

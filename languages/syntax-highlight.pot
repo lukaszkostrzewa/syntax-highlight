@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Syntax Highlight\n"
+"POT-Creation-Date: 2014-05-20 21:34+0100\n"
+"PO-Revision-Date: 2014-05-20 22:28+0100\n"
+"Last-Translator: \n"
+"Language-Team: Łukasz Kostrzewa <lukasz.webmaster@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../class-sh-settings.php:114 ../class-sh-settings.php:154
+msgid "Settings"
+msgstr ""
+
+#: ../class-sh-settings.php:130
+msgid "Syntax Highlight Options"
+msgstr ""
+
+#: ../class-sh-settings.php:131
+msgid "Syntax Highlight"
+msgstr ""
+
+#: ../class-sh-settings.php:147
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../class-sh-settings.php:186
+msgid "SyntaxHighlight Settings"
+msgstr ""
+
+#: ../class-sh-settings.php:193
+msgid "Default tab size"
+msgstr ""
+
+#: ../class-sh-settings.php:201
+msgid "Use soft tabs?"
+msgstr ""
+
+#: ../class-sh-settings.php:209
+msgid "Show line numbers?"
+msgstr ""
+
+#: ../class-sh-settings.php:217
+msgid "Wrap words?"
+msgstr ""
+
+#: ../class-sh-settings.php:225
+msgid "Highlight current line?"
+msgstr ""
+
+#: ../class-sh-settings.php:233
+msgid "Key bindings"
+msgstr ""
+
+#: ../class-sh-settings.php:241
+msgid "Theme"
+msgstr ""
+
+#: ../class-sh-settings.php:249
+msgid "Full line selection"
+msgstr ""
+
+#: ../class-sh-settings.php:257
+msgid "Show alert on leave when unsaved changes"
+msgstr ""
+
+#: ../class-sh-settings.php:299
+msgid "Enter your settings below:"
+msgstr ""
+
+#: ../class-sh-settings.php:407
+msgid "List of default keyboard shortcuts"
+msgstr ""

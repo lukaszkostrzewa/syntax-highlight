@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Syntax Highlight\n"
+"POT-Creation-Date: 2014-05-20 21:34+0100\n"
+"PO-Revision-Date: 2014-05-20 22:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: Łukasz Kostrzewa <lukasz.webmaster@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: pl_PL\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../class-sh-settings.php:114 ../class-sh-settings.php:154
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: ../class-sh-settings.php:130
+msgid "Syntax Highlight Options"
+msgstr "Ustawienia Syntax Highlight"
+
+#: ../class-sh-settings.php:131
+msgid "Syntax Highlight"
+msgstr "Syntax Highlight"
+
+#: ../class-sh-settings.php:147
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nie masz wystarczających uprawnień, aby oglądać tę stronę."
+
+#: ../class-sh-settings.php:186
+msgid "SyntaxHighlight Settings"
+msgstr "Ustawienia SyntaxHighlight"
+
+#: ../class-sh-settings.php:193
+msgid "Default tab size"
+msgstr "Rozmiar tabulatora"
+
+#: ../class-sh-settings.php:201
+msgid "Use soft tabs?"
+msgstr "Używanie spacji zamiast tabulatorów"
+
+#: ../class-sh-settings.php:209
+msgid "Show line numbers?"
+msgstr "Pokazywanie numerów wierszy"
+
+#: ../class-sh-settings.php:217
+msgid "Wrap words?"
+msgstr "Zawijanie wierszy"
+
+#: ../class-sh-settings.php:225
+msgid "Highlight current line?"
+msgstr "Podświetlanie obecnej linii"
+
+#: ../class-sh-settings.php:233
+msgid "Key bindings"
+msgstr "Skróty klawiszowe"
+
+#: ../class-sh-settings.php:241
+msgid "Theme"
+msgstr "Motyw"
+
+#: ../class-sh-settings.php:249
+msgid "Full line selection"
+msgstr "Zaznaczanie całej linii"
+
+#: ../class-sh-settings.php:257
+msgid "Show alert on leave when unsaved changes"
+msgstr "Pokazywanie informacji, gdy są niezapisane zmiany"
+
+#: ../class-sh-settings.php:299
+msgid "Enter your settings below:"
+msgstr "Podaj ustawienia poniżej:"
+
+#: ../class-sh-settings.php:407
+msgid "List of default keyboard shortcuts"
+msgstr "Lista domyślnych skrótów klawiszowych"

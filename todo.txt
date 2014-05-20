@@ -1,3 +1,2 @@
-- dodac l18n
-+ resize, fullscreen mode
++ dodac l18n
 - ajax save on ctrl+s, :w

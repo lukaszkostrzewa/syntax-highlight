@@ -7,7 +7,7 @@
  * Author: Lukasz Kostrzewa
  * Author URI: 
  * License: GPL2
- * Text Domain: syntaxhigh
+ * Text Domain: syntax-highlight
  * Domain Path: /languages/
  */
 
@@ -30,10 +30,8 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
-// Exit if administration panel is not being accessed
-if ( !is_admin() ) exit;
-
-if ( !class_exists( 'SyntaxHighlight' ) ) :
+// Only when accesing admin page
+if ( !class_exists( 'SyntaxHighlight' ) and is_admin()) :
 
 class SyntaxHighlight {
 
@@ -100,7 +98,9 @@ class SyntaxHighlight {
 		$this->file 		= __FILE__;
 		$this->basename 	= plugin_basename( $this->file );
 		$this->plugin_dir 	= plugin_dir_path( __FILE__ );
-
+		
+		// Language directory
+		$this->lang_dir 	= basename( dirname( $this->file ) ) . '/languages';
 
 		$this->js_handle   	= 'sh-js';
 	}
@@ -128,6 +128,9 @@ class SyntaxHighlight {
 	 */
 	private function setup_actions() {
 
+		// Load localization
+		add_action( 'plugins_loaded', 	array( $this, 'plugins_loaded' ) );
+
 		// Add action only if on Editor page
 		if ( !$this->is_editor() ) {
 			return;
@@ -135,9 +138,6 @@ class SyntaxHighlight {
 
 		// Load scripts
 		add_action( 'admin_init', 		array( $this, 'admin_init') );
-
-		// Load localization
-		add_action( 'plugins_loaded', 	array( $this, 'plugins_loaded' ) );
 	}
 
 	private function is_editor(){
@@ -157,8 +157,6 @@ class SyntaxHighlight {
 		// Load SyntaxHighlight JavaScript and CSS file
 		wp_enqueue_script( $this->js_handle, 		plugins_url( 'syntax-highlight.js', __FILE__ ), array(), syntaxhigh()->version, true );
 		wp_enqueue_style( 'sh-css', 				plugins_url( 'syntax-highlight.css', __FILE__ ) );
-		
-		// wp_enqueue_script('jquery-ui-resizable');
 
 		// Load settings into SyntaxHighlight JavaScript file
 		$sh_settings = get_option( $this->settings->option_name );
@@ -171,7 +169,7 @@ class SyntaxHighlight {
 	 * @since SyntaxHighlight (1.0)
 	 */
 	function plugins_loaded() {
-  		load_plugin_textdomain( 'syntaxhigh', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+  		load_plugin_textdomain( 'syntax-highlight', false, $this->lang_dir ); 
 	}
 }
 
