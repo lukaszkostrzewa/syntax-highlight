@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Syntax Highlight\n"
-"POT-Creation-Date: 2014-05-20 21:34+0100\n"
-"PO-Revision-Date: 2014-05-20 22:49+0100\n"
+"POT-Creation-Date: 2014-05-21 00:40+0100\n"
+"PO-Revision-Date: 2014-05-21 00:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: Łukasz Kostrzewa <lukasz.webmaster@gmail.com>\n"
+"Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,69 +15,76 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: pl_PL\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../class-sh-settings.php:114 ../class-sh-settings.php:154
+#: ../class-sh-settings.php:116 ../class-sh-settings.php:156
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: ../class-sh-settings.php:130
+#: ../class-sh-settings.php:132
 msgid "Syntax Highlight Options"
 msgstr "Ustawienia Syntax Highlight"
 
-#: ../class-sh-settings.php:131
+#: ../class-sh-settings.php:133
 msgid "Syntax Highlight"
 msgstr "Syntax Highlight"
 
-#: ../class-sh-settings.php:147
+#: ../class-sh-settings.php:149
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Nie masz wystarczających uprawnień, aby oglądać tę stronę."
 
-#: ../class-sh-settings.php:186
+#: ../class-sh-settings.php:188
 msgid "SyntaxHighlight Settings"
 msgstr "Ustawienia SyntaxHighlight"
 
-#: ../class-sh-settings.php:193
+#: ../class-sh-settings.php:195
 msgid "Default tab size"
 msgstr "Rozmiar tabulatora"
 
-#: ../class-sh-settings.php:201
+#: ../class-sh-settings.php:203
 msgid "Use soft tabs?"
 msgstr "Używanie spacji zamiast tabulatorów"
 
-#: ../class-sh-settings.php:209
+#: ../class-sh-settings.php:211
 msgid "Show line numbers?"
 msgstr "Pokazywanie numerów wierszy"
 
-#: ../class-sh-settings.php:217
+#: ../class-sh-settings.php:219
 msgid "Wrap words?"
 msgstr "Zawijanie wierszy"
 
-#: ../class-sh-settings.php:225
+#: ../class-sh-settings.php:227
 msgid "Highlight current line?"
 msgstr "Podświetlanie obecnej linii"
 
-#: ../class-sh-settings.php:233
+#: ../class-sh-settings.php:235
 msgid "Key bindings"
 msgstr "Skróty klawiszowe"
 
-#: ../class-sh-settings.php:241
+#: ../class-sh-settings.php:243
 msgid "Theme"
 msgstr "Motyw"
 
-#: ../class-sh-settings.php:249
+#: ../class-sh-settings.php:251
 msgid "Full line selection"
 msgstr "Zaznaczanie całej linii"
 
-#: ../class-sh-settings.php:257
+#: ../class-sh-settings.php:259
 msgid "Show alert on leave when unsaved changes"
 msgstr "Pokazywanie informacji, gdy są niezapisane zmiany"
 
-#: ../class-sh-settings.php:299
+#: ../class-sh-settings.php:267
+msgid "Save on ctrl+s"
+msgstr "Zapisywanie przez ctrl+s"
+
+#: ../class-sh-settings.php:309
 msgid "Enter your settings below:"
 msgstr "Podaj ustawienia poniżej:"
 
-#: ../class-sh-settings.php:407
+#: ../class-sh-settings.php:431
 msgid "List of default keyboard shortcuts"
 msgstr "Lista domyślnych skrótów klawiszowych"
+
+#: ../syntax-highlight.php:163
+msgid "Some changes have not been saved."
+msgstr "Zmiany nie zostały zapisane."

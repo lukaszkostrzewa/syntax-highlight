@@ -17,7 +17,6 @@ jQuery(function ($) {
 
 	var editor = ace.edit(editDiv[0]);
 	editor.getSession().setValue(textarea.val());
-	//editor.setKeyboardHandler("ace/keyboard/vim");
 
 	var modelist = ace.require('ace/ext/modelist');
 	var filePath = $("input[name='file']").attr("value");
@@ -30,9 +29,6 @@ jQuery(function ($) {
 	textarea.closest('form').submit(function () {
 		textarea.val(editor.getSession().getValue());
 	});
-
-	console.log('shSettings');
-	console.log(shSettings);
 
 	// Apply settings
 	editor.renderer.setShowGutter(shSettings['show_line_numbers'] == 1);
@@ -60,19 +56,15 @@ jQuery(function ($) {
 			changed = true;
 		});
 
-		$(window).bind('beforeunload', function(e){
+		$(window).bind('beforeunload', function (e) {
 			if (changed) {
-				return 'Some changes have not been saved.';
+				return shSettings['unsaved_changes_txt'];
 			}
 		});
 	}
 
-
 	var dom = ace.require("ace/lib/dom");
-	//var commands = ace.require("ace/commands/default_commands").commands;
 	editor.commands.addCommand({
-	// add command for all new editors
-	//commands.push({
 		name: "Toggle Fullscreen",
 		bindKey: {win: "Ctrl-Enter", mac: "Command-Enter"},
 		exec: function(editor) {
@@ -83,4 +75,54 @@ jQuery(function ($) {
 		}
 	});
 
+	var ajaxSave = function() {
+		$("#template").submit(function() {
+			var url = $(this).attr("action"); // the script where you handle the form input.
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: $("#template").serialize(), // serializes the form's elements.
+				success: function(data) {
+					changed = false;
+				}
+			});
+			return false; // avoid to execute the actual submit of the form.
+		});
+		var $div = $('<div />').appendTo('body');
+		$div.attr('id', 'save-spinner');
+		$div.hide();
+		jQuery.ajaxSetup({
+			beforeSend: function() {
+				$('#save-spinner').show();
+			},
+			complete: function(){
+				$('#save-spinner').hide();
+			},
+			success: function() {}
+		});
+	};
+
+	if (shSettings['ctrls_save'] == 1) {
+		ajaxSave();
+		var editorFocused = false;
+
+		editor.on("focus", function (e) {
+			editorFocused = true;
+		});
+
+		editor.on("blur", function (e) {
+			editorFocused = false;
+		});
+
+		$(window).bind('keydown', function(event) {
+			if (editorFocused && (event.ctrlKey || event.metaKey)) {
+				switch (String.fromCharCode(event.which).toLowerCase()) {
+				case 's':
+					event.preventDefault();
+					$("#template").submit();
+					break;
+				}
+			}
+		});
+	}
 });

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Syntax Highlight\n"
-"POT-Creation-Date: 2014-05-20 21:34+0100\n"
-"PO-Revision-Date: 2014-05-20 22:28+0100\n"
+"POT-Creation-Date: 2014-05-21 00:39+0100\n"
+"PO-Revision-Date: 2014-05-21 00:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: Łukasz Kostrzewa <lukasz.webmaster@gmail.com>\n"
 "Language: en\n"
@@ -16,66 +16,74 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../class-sh-settings.php:114 ../class-sh-settings.php:154
+#: ../class-sh-settings.php:116 ../class-sh-settings.php:156
 msgid "Settings"
 msgstr ""
 
-#: ../class-sh-settings.php:130
+#: ../class-sh-settings.php:132
 msgid "Syntax Highlight Options"
 msgstr ""
 
-#: ../class-sh-settings.php:131
+#: ../class-sh-settings.php:133
 msgid "Syntax Highlight"
 msgstr ""
 
-#: ../class-sh-settings.php:147
+#: ../class-sh-settings.php:149
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../class-sh-settings.php:186
+#: ../class-sh-settings.php:188
 msgid "SyntaxHighlight Settings"
 msgstr ""
 
-#: ../class-sh-settings.php:193
+#: ../class-sh-settings.php:195
 msgid "Default tab size"
 msgstr ""
 
-#: ../class-sh-settings.php:201
+#: ../class-sh-settings.php:203
 msgid "Use soft tabs?"
 msgstr ""
 
-#: ../class-sh-settings.php:209
+#: ../class-sh-settings.php:211
 msgid "Show line numbers?"
 msgstr ""
 
-#: ../class-sh-settings.php:217
+#: ../class-sh-settings.php:219
 msgid "Wrap words?"
 msgstr ""
 
-#: ../class-sh-settings.php:225
+#: ../class-sh-settings.php:227
 msgid "Highlight current line?"
 msgstr ""
 
-#: ../class-sh-settings.php:233
+#: ../class-sh-settings.php:235
 msgid "Key bindings"
 msgstr ""
 
-#: ../class-sh-settings.php:241
+#: ../class-sh-settings.php:243
 msgid "Theme"
 msgstr ""
 
-#: ../class-sh-settings.php:249
+#: ../class-sh-settings.php:251
 msgid "Full line selection"
 msgstr ""
 
-#: ../class-sh-settings.php:257
+#: ../class-sh-settings.php:259
 msgid "Show alert on leave when unsaved changes"
 msgstr ""
 
-#: ../class-sh-settings.php:299
+#: ../class-sh-settings.php:267
+msgid "Save on ctrl+s"
+msgstr ""
+
+#: ../class-sh-settings.php:309
 msgid "Enter your settings below:"
 msgstr ""
 
-#: ../class-sh-settings.php:407
+#: ../class-sh-settings.php:431
 msgid "List of default keyboard shortcuts"
+msgstr ""
+
+#: ../syntax-highlight.php:163
+msgid "Some changes have not been saved."
 msgstr ""

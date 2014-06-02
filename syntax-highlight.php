@@ -160,6 +160,9 @@ class SyntaxHighlight {
 
 		// Load settings into SyntaxHighlight JavaScript file
 		$sh_settings = get_option( $this->settings->option_name );
+		$sh_settings = array_merge( array( 
+			'unsaved_changes_txt' => __('Some changes have not been saved.', 'syntax-highlight') 
+			), $sh_settings);
 		wp_localize_script( $this->js_handle, 'shSettings', $sh_settings);
 	}
 

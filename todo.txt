@@ -1,2 +1,0 @@
-+ dodac l18n
-- ajax save on ctrl+s, :w

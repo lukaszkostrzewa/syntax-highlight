@@ -21,7 +21,8 @@ class SH_Settings {
     	'use_soft_tabs', 
     	'highlight_curr_line', 
     	'full_line_selection', 
-    	'unsaved_changes'
+    	'unsaved_changes',
+        'ctrls_save'
     );
 
     public $defaults = array(
@@ -33,7 +34,8 @@ class SH_Settings {
   		'key_bindings' => 'default',
   		'full_line_selection' => '1',
   		'theme' => 'chrome',
-  		'unsaved_changes' => '1'
+  		'unsaved_changes' => '1',
+        'ctrls_save' => '1'
 	);
 
 	/**
@@ -259,6 +261,14 @@ class SH_Settings {
             $this->sh_settings_id, 
             $this->setting_section_id
         );
+
+        add_settings_field(
+            'ctrls_save', 
+            __('Save on ctrl+s', $this->td ),
+            array( $this, 'ctrls_save_callback' ), 
+            $this->sh_settings_id, 
+            $this->setting_section_id
+        );
     }
 
     /**
@@ -334,6 +344,20 @@ class SH_Settings {
     		name="<?php echo $this->option_name; ?>[unsaved_changes]" 
     		value="1" 
     		<?php checked( $this->options['unsaved_changes'], 1 ); ?> />
+        <?php
+    }
+
+     /** 
+     * Get the settings option array and print one of its values
+     */
+    public function ctrls_save_callback() {
+        ?>
+        <input 
+            type="checkbox" 
+            id="ctrls_save" 
+            name="<?php echo $this->option_name; ?>[ctrls_save]" 
+            value="1" 
+            <?php checked( $this->options['ctrls_save'], 1 ); ?> />
         <?php
     }
 
