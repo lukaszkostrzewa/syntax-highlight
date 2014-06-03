@@ -34,6 +34,11 @@ Syntax Highlighting in WordPress Plugins and Themes Editor.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Enjoy syntax highlithing in your WordPress Editor!
 
+== Changelog ==
+
+= Version 1.0 =
+* 	initial version
+
 == Screenshots ==
 
 1. Syntax Highlight in action
