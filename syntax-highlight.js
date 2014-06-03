@@ -76,29 +76,26 @@ jQuery(function ($) {
 	});
 
 	var ajaxSave = function() {
+		var $div = $('<div />').appendTo('body');
+		$div.attr('id', 'save-spinner');
+		$div.hide();
 		$("#template").submit(function() {
 			var url = $(this).attr("action"); // the script where you handle the form input.
 			$.ajax({
 				type: "POST",
 				url: url,
 				data: $("#template").serialize(), // serializes the form's elements.
+				beforeSend: function () {
+					$('#save-spinner').show();
+				},
 				success: function(data) {
 					changed = false;
+				},
+				complete: function(data) {
+					$('#save-spinner').hide();
 				}
 			});
 			return false; // avoid to execute the actual submit of the form.
-		});
-		var $div = $('<div />').appendTo('body');
-		$div.attr('id', 'save-spinner');
-		$div.hide();
-		jQuery.ajaxSetup({
-			beforeSend: function() {
-				$('#save-spinner').show();
-			},
-			complete: function(){
-				$('#save-spinner').hide();
-			},
-			success: function() {}
 		});
 	};
 
