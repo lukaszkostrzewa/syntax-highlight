@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Syntax Highlight ===
 Contributors: lukaszwebmaster
 Donate link: 
 Tags: editor, themes editor, plugins editor, html editor, syntax highlight, syntax highlighting, syntax highlighter, plugin editor, syntax, highlighting, text editor, editor syntax, syntax coloring
