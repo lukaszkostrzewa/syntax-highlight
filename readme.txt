@@ -4,7 +4,7 @@ Donate link:
 Tags: editor, themes editor, plugins editor, html editor, syntax highlight, syntax highlighting, syntax highlighter, plugin editor, syntax, highlighting, text editor, editor syntax, syntax coloring
 Requires at least: 3.9.1
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ Syntax Highlighting in WordPress Plugins and Themes Editor.
 1. Enjoy syntax highlithing in your WordPress Editor!
 
 == Changelog ==
+
+= Version 1.0.1 = 
+*	Bugfix: Load default settings 
 
 = Version 1.0 =
 * 	initial version

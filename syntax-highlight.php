@@ -3,7 +3,7 @@
  * Plugin Name: Syntax Highlight
  * Plugin URI: http://wordpress.org/extend/plugins/syntax-highlight/
  * Description: Syntax Highlighting in WordPress Plugins and Themes Editor
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Lukasz Kostrzewa
  * Author URI: 
  * License: GPL2
@@ -33,7 +33,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // Only when accesing admin page
 if ( !class_exists( 'SyntaxHighlight' ) and is_admin()) :
 
-class SyntaxHighlight {
+class SyntaxHighlight { 
 
 	/** Singleton *********************************************************/
 
@@ -90,7 +90,7 @@ class SyntaxHighlight {
 
 		/** Versions **************************************************/
 
-		$this->version    	= '1.0';
+		$this->version    	= '1.0.1';
 
 		/** Paths******************************************************/
 
@@ -140,9 +140,11 @@ class SyntaxHighlight {
 		add_action( 'admin_init', 		array( $this, 'admin_init') );
 	}
 
-	private function is_editor(){
-		if ( !strstr($_SERVER['SCRIPT_NAME'],'plugin-editor.php') && 
-			 !strstr($_SERVER['SCRIPT_NAME'],'theme-editor.php' ) ) {
+	private function is_editor() {
+		global $pagenow;
+
+		if ( $pagenow != 'plugin-editor.php' && 
+			 $pagenow != 'theme-editor.php' ) {
 			return false;
 		}
 		return true;
@@ -160,6 +162,16 @@ class SyntaxHighlight {
 
 		// Load settings into SyntaxHighlight JavaScript file
 		$sh_settings = get_option( $this->settings->option_name );
+
+		/**
+		 * If there are no settings in database, add default
+		 * @since SyntaxHighlight (1.0.1)
+		 */
+		if ( !$sh_settings ) {
+			$sh_settings = $this->settings->defaults;
+			add_option( $this->settings->option_name, $sh_settings );
+		}
+
 		$sh_settings = array_merge( array( 
 			'unsaved_changes_txt' => __('Some changes have not been saved.', 'syntax-highlight') 
 			), $sh_settings);

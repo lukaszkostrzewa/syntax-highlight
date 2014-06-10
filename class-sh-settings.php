@@ -33,7 +33,7 @@ class SH_Settings {
   		'highlight_curr_line' => '1',
   		'key_bindings' => 'default',
   		'full_line_selection' => '1',
-  		'theme' => 'chrome',
+  		'theme' => 'tomorrow_night',
   		'unsaved_changes' => '1',
         'ctrls_save' => '1'
 	);
